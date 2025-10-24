@@ -45,4 +45,4 @@ with open(output_file, 'w') as of:
                 description = product_dict.get(seq_id, "Unknown")
                 of.write(f"{seq_id}\t{description}\t{out_seq_lower}\n")
 
-#print(f"Motif search complete. Results written to {output_file}.")
+print(f"Motif search complete. Results written to {output_file}.")
