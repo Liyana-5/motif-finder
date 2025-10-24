@@ -13,6 +13,7 @@ This Python script (find_motif_fasta_txt.py) searches for specific amino acid mo
 
 # Usage 
 **python finding_motif_fasta_txt.py <fasta_file> <description_file> <output_file>**
+
 Example files used in this script is given in the repository as:
  - Fasta file : Tgondii_Proteins.fasta
  - txt file : Tgondii_product_descriptions.txt**
