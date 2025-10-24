@@ -12,12 +12,12 @@ This Python script (find_motif_fasta_txt.py) searches for specific amino acid mo
 - Outputs results to a tab-delimited file.
 
 # Usage 
-"python finding_motif_fasta_txt.py <fasta_file> <description_file> <output_file>"
-** Example files used in this script is given in the repository as :
+**python finding_motif_fasta_txt.py <fasta_file> <description_file> <output_file>**
+Example files used in this script is given in the repository as:
  - Fasta file : Tgondii_Proteins.fasta
- - txt file : Tgondii_product_descriptions.txt **
+ - txt file : Tgondii_product_descriptions.txt**
 
-**  These files are taken from:https://veupathdb.org/veupathdb/app/ **
+**These files are taken from:https://veupathdb.org/veupathdb/app/**
 
 The default motif searched in this script is:
-** Y..[YFT].{0,6}$ **
+**Y..[YFT].{0,6}$**
