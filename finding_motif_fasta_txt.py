@@ -11,9 +11,14 @@ print("Program to find motifs in a FASTA file and extract relevant information."
 import re
 import sys
 
-des_file = "Tgondii_product_descriptions.txt"
-fasta_file = "Tgondii_Proteins.fasta"
-output_file = "motif_output.txt"
+# Define file paths
+if len(sys.argv) != 4:
+   print('Usage : python finding_motif_fasta_txt.py <fasta_file> <description_file> <output_file>')
+   sys.exit(1)
+
+fasta_file = sys.argv[1]
+des_file = sys.argv[2]
+output_file = sys.argv[3]
 
 motif = r'Y..[YFT].{0,6}$' # Define the motif pattern
 
@@ -30,8 +35,11 @@ try:
 except Exception as e:
     print(f"Error reading {des_file}: {e}")
     sys.exit(1)
+<<<<<<< HEAD
 
 
+=======
+>>>>>>> cli-version
 
 # Read the FASTA file 
 # Write the information to the output file
@@ -53,7 +61,11 @@ try:
                     description = product_dict.get(seq_id, "Unknown")
                     of.write(f"{seq_id}\t{description}\t{out_seq_lower}\n")
 except Exception as e:
+<<<<<<< HEAD
     print(f"Erro processing files: {e}")
+=======
+    print(f"Error processing files: {e}")
+>>>>>>> cli-version
     sys.exit(1)
 
 print(f"Motif search complete. Results written to {output_file}.")
