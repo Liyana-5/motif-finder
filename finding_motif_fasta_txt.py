@@ -9,10 +9,15 @@ print("Program to find motifs in a FASTA file and extract relevant information."
 
 # import necessary libraries
 import re
+import sys
+# Define file paths
+if len(sys.argv) != 4:
+   print('Usage : python finding_motif_fasta_txt.py <fasta_file> <description_file> <output_file>')
+   sys.exit(1)
 
-des_file = "Tgondii_product_descriptions.txt"
-fasta_file = "Tgondii_Proteins.fasta"
-output_file = "motif_output.txt"
+fasta_file = sys.argv[1]
+des_file = sys.argv[2]
+output_file = sys.argv[3]
 
 motif = r'Y..[YFT].{0,6}$' # Define the motif pattern
 
@@ -45,4 +50,4 @@ with open(output_file, 'w') as of:
                 description = product_dict.get(seq_id, "Unknown")
                 of.write(f"{seq_id}\t{description}\t{out_seq_lower}\n")
 
-#print(f"Motif search complete. Results written to {output_file}.")
+print(f"Motif search complete. Results written to {output_file}.")
