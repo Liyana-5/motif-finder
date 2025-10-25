@@ -1,0 +1,29 @@
+name: motif-CI
+
+on:
+  push:
+    branches: [ master ]
+  pull_request:
+    branches: [ master ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v3
+
+    - name: Set up Python
+      uses: actions/setup-python@v4
+      with:
+        python-version: '3.11'
+
+    - name: Install dependencies
+      run: |
+        python -m pip install --upgrade pip
+        python -m pip install biopython
+
+    - name: Run motif finder
+      run: |
+        python finding_motif_fasta_txt.py Tgondii_Proteins.fasta Tgondii_product_descriptions.txt output.txt
